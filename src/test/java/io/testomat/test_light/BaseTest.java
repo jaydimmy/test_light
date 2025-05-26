@@ -1,29 +1,29 @@
 package io.testomat.test_light;
 
-import org.junit.jupiter.api.BeforeAll;
+import io.testomat.test_light.helpers.EnvHelper;
+import io.testomat.test_light.web.pages.SignInPage;
+import org.junit.jupiter.api.AfterEach;
+import org.junit.jupiter.api.BeforeEach;
 
-import static com.codeborne.selenide.Selenide.open;
-import static io.testomat.test_light.LoginFormHelper.checkLoginFormIsLoaded;
-import static io.testomat.test_light.LoginFormHelper.checkRememberMe;
-import static io.testomat.test_light.LoginFormHelper.clickSignInButton;
-import static io.testomat.test_light.LoginFormHelper.setUserEmail;
-import static io.testomat.test_light.LoginFormHelper.setUserPassword;
-import static io.testomat.test_light.Utils.getInitialPageUrl;
-import static io.testomat.test_light.Utils.verifyLoaderIsNotVisible;
-import static io.testomat.test_light.Utils.verifyUrlChange;
+import static com.codeborne.selenide.Selenide.closeWebDriver;
 
 public class BaseTest {
 
-    @BeforeAll
-    public static void  login() {
-        open("https://app.testomat.io");
-        checkLoginFormIsLoaded();
-        getInitialPageUrl();
-        setUserEmail();
-        setUserPassword();
-        checkRememberMe();
-        clickSignInButton();
-        verifyLoaderIsNotVisible();
-        verifyUrlChange();
+    static {
+        EnvHelper.configure();
+    }
+
+    private static final String userEmail = EnvHelper.getUserEmail();
+    private static final String userPassword = EnvHelper.getUserPassword();
+
+    @BeforeEach
+    public void setUp() {
+        new SignInPage().login(userEmail, userPassword);
  }
+
+    @AfterEach
+    public void tearDown() {
+        closeWebDriver();
+    }
+
 }
