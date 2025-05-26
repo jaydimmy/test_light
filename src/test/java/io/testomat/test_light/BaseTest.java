@@ -13,12 +13,12 @@ public class BaseTest {
         EnvHelper.configure();
     }
 
-    private static final String USER_EMAIL = EnvHelper.getUserEmail();
-    private static final String USER_PASSWORD = EnvHelper.getUserPassword();
+    private static final String userEmail = EnvHelper.getUserEmail();
+    private static final String userPassword = EnvHelper.getUserPassword();
 
     @BeforeEach
     public void setUp() {
-        new SignInPage().login(USER_EMAIL, USER_PASSWORD);
+        new SignInPage().login(userEmail, userPassword);
  }
 
     @AfterEach
