@@ -33,7 +33,7 @@ bin/
 .DS_Store
 
 ### Logs ###
-.log
+./logs
 
 ### DotEnv ###
 .env

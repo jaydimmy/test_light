@@ -1,12 +1,15 @@
 package io.testomat.test_light.helpers;
 
+import com.codeborne.selenide.Configuration;
 import io.github.cdimascio.dotenv.Dotenv;
 
 public class EnvHelper {
     private static final Dotenv env = Dotenv.load();
 
-    public static String getBaseUrl() {
-        return env.get("BASE_URL");
+    public static void configure() {
+        Configuration.baseUrl = env.get("BASE_URL");
+        Configuration.browserPosition = "0x0";
+        Configuration.browserSize = "1720x1440";
     }
 
     public static String getUserEmail() {

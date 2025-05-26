@@ -9,7 +9,8 @@ import static com.codeborne.selenide.Condition.visible;
 import static com.codeborne.selenide.Selenide.$;
 
 public abstract class BasePage {
-    protected static final Logger logger = LoggerFactory.getLogger(BasePage.class);
+    private static final Logger logger = LoggerFactory.getLogger(BasePage.class);
+    public static final String CONTENT_DESKTOP = "#content-desktop";
 
     public static void verifyLoaderIsNotVisible() {
         logger.info("Verifying that the loader is not visible");

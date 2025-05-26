@@ -19,7 +19,7 @@ public class SectionTests extends BaseTest {
         verifyLoaderIsNotVisible();
         projectsPage.isLoaded();
         projectsPage.verifySelectedCompany(QA_CLUB_LVIV);
-        projectsPage.findProject(MANUFACTURE_LIGHT);
+        projectsPage.searchProject(MANUFACTURE_LIGHT);
         projectsPage.selectProject(MANUFACTURE_LIGHT);
         verifyLoaderIsNotVisible();
         projectPage.isLoaded(MANUFACTURE_LIGHT);

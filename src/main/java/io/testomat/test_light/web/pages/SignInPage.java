@@ -14,9 +14,8 @@ import static com.codeborne.selenide.Selenide.$;
 public class SignInPage extends BasePage {
 
     private static final Logger logger = LoggerFactory.getLogger(SignInPage.class);
-
-    private static final String CONTENT_DESKTOP = "#content-desktop";
-
+    public static final String SIGN_IN = "Sign In";
+    public static final String COMMON_FLASH_INFO = ".common-flash-info";
 
     private final SelenideElement contentDesktopContainer = $(CONTENT_DESKTOP);
     private final SelenideElement userEmailInput = contentDesktopContainer.find(By.id("user_email"));
@@ -30,7 +29,7 @@ public class SignInPage extends BasePage {
     }
 
     public void isLoaded() {
-        verifyPageIsLoaded(CONTENT_DESKTOP, "Sign In");
+        verifyPageIsLoaded(CONTENT_DESKTOP, SIGN_IN);
     }
 
     public void enterUserEmail(String userEmail) {
@@ -58,18 +57,18 @@ public class SignInPage extends BasePage {
     }
 
     public void verifyInvalidEmailOrPasswordMessage() {
-        verifyMessage(CONTENT_DESKTOP, ".common-flash-info",
+        verifyMessage(CONTENT_DESKTOP, COMMON_FLASH_INFO,
                 "Invalid email or password.");
     }
 
     public void verifyYouMustBeLoggedMessage() {
-        verifyMessage(CONTENT_DESKTOP, ".common-flash-info",
+        verifyMessage(CONTENT_DESKTOP, COMMON_FLASH_INFO,
                 "You must be logged in to access this page");
     }
 
     public void login(String email, String password) {
         open();
-        verifyPageIsLoaded("content-desktop", "Sign In");
+        verifyPageIsLoaded(CONTENT_DESKTOP, SIGN_IN);
         enterUserEmail(email);
         enterUserPassword(password);
         checkRememberMe();

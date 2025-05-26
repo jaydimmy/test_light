@@ -1,6 +1,5 @@
 package io.testomat.test_light;
 
-import com.codeborne.selenide.Configuration;
 import io.testomat.test_light.helpers.EnvHelper;
 import io.testomat.test_light.web.pages.SignInPage;
 import org.junit.jupiter.api.AfterEach;
@@ -11,10 +10,7 @@ import static com.codeborne.selenide.Selenide.closeWebDriver;
 public class BaseTest {
 
     static {
-        Configuration.baseUrl = EnvHelper.getBaseUrl();
-        Configuration.savePageSource = false;
-        Configuration.browserPosition = "0x0";
-        Configuration.browserSize = "1720x1440";
+        EnvHelper.configure();
     }
 
     private static final String USER_EMAIL = EnvHelper.getUserEmail();

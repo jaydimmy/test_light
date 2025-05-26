@@ -29,7 +29,7 @@ public class LoginTests extends BaseTest {
         verifyLoaderIsNotVisible();
         projectsPage.isLoaded();
         projectsPage.verifySigInSuccessMessage();
-        projectsPage.performSignOut();
+        projectsPage.signOut();
         verifyLoaderIsNotVisible();
         signInPage.isLoaded();
         signInPage.verifyYouMustBeLoggedMessage();
