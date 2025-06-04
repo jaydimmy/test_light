@@ -10,8 +10,7 @@ repositories {
 }
 
 ext {
-    seleniumVersion = '4.32.0'
-    selenideVersion = '7.6.1'
+    selenideVersion = '7.9.3'
     slf4jVersion = '2.0.12'
     logbackVersion = '1.5.18'
     junitVersion = '5.11.3'
@@ -29,8 +28,6 @@ tasks.withType(JavaCompile).configureEach {
 }
 
 dependencies {
-    implementation "org.seleniumhq.selenium:selenium-chrome-driver:${seleniumVersion}"
-    implementation "org.seleniumhq.selenium:selenium-devtools-v136:${seleniumVersion}"
 
     implementation "com.codeborne:selenide:${selenideVersion}"
 

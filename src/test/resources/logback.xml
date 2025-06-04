@@ -23,15 +23,9 @@
         </encoder>
     </appender>
 
-    <logger name="io.testomat.test_light" level="INFO" additivity="false">
+    <root level="INFO">
         <appender-ref ref="CONSOLE"/>
         <appender-ref ref="FILE"/>
-    </logger>
-
-    <root level="ERROR">
-        <appender-ref ref="CONSOLE"/>
-        <appender-ref ref="FILE"/>
-
     </root>
 
 </configuration>
