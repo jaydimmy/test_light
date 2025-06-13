@@ -9,12 +9,12 @@ import org.slf4j.LoggerFactory;
 import static com.codeborne.selenide.Condition.checked;
 import static com.codeborne.selenide.Condition.value;
 import static com.codeborne.selenide.Selenide.$;
+import static io.testomat.test_light.web.pages.enums.PageTitles.SIGN_IN;
 
 
 public class SignInPage extends BasePage {
 
     private static final Logger logger = LoggerFactory.getLogger(SignInPage.class);
-    public static final String SIGN_IN = "Sign In";
 
     private final SelenideElement contentDesktopContainer = $(CONTENT_DESKTOP);
     private final SelenideElement userEmailInput = contentDesktopContainer.find(By.id("user_email"));

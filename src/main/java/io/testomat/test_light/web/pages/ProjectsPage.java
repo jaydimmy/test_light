@@ -2,9 +2,12 @@ package io.testomat.test_light.web.pages;
 
 import com.codeborne.selenide.ElementsCollection;
 import com.codeborne.selenide.SelenideElement;
+import io.testomat.test_light.web.pages.enums.CompanyNames;
+import io.testomat.test_light.web.pages.enums.ProjectNames;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import static com.codeborne.selenide.CollectionCondition.sizeGreaterThan;
 import static com.codeborne.selenide.Condition.selected;
 import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Condition.value;
@@ -14,6 +17,7 @@ import static com.codeborne.selenide.Selenide.$$;
 import static io.testomat.test_light.web.pages.BasePage.CONTENT_DESKTOP;
 import static io.testomat.test_light.web.pages.BasePage.verifyLoaderIsNotVisible;
 import static io.testomat.test_light.web.pages.BasePage.verifyPageIsLoaded;
+import static io.testomat.test_light.web.pages.enums.PageTitles.PROJECTS;
 
 public class ProjectsPage {
     private static final Logger logger = LoggerFactory.getLogger(ProjectsPage.class);
@@ -23,17 +27,15 @@ public class ProjectsPage {
     private final SelenideElement profileMenu = $("#profile-menu");
     private final SelenideElement signOutButton = profileMenu.find("button[type='submit']");
     private final SelenideElement successMessage = $(".common-flash-success");
-    public static final String MANUFACTURE_LIGHT = "Manufacture light";
-    public static final String QA_CLUB_LVIV = "QA Club Lviv";
-    public static final String MANUFACTURE_TESTOMATIO = "Manufacture Testomatio";
 
     public ProjectsPage isLoaded() {
         verifyLoaderIsNotVisible();
-        verifyPageIsLoaded(CONTENT_DESKTOP, "Projects");
+        verifyPageIsLoaded(CONTENT_DESKTOP, PROJECTS);
         return this;
     }
 
-    public ProjectsPage verifySelectedCompany(String companyName) {
+    public ProjectsPage verifySelectedCompany(CompanyNames company) {
+        String companyName = company.getName();
         logger.info("Verifying selected company: {}", companyName);
         companyOptions
                 .findBy(text(companyName))
@@ -42,19 +44,21 @@ public class ProjectsPage {
         return this;
     }
 
-    public ProjectsPage searchProject(String sectionName) {
-        logger.info("Searching for project section: {}", sectionName);
-        searchInput.setValue(sectionName);
-        searchInput.shouldHave(value(sectionName));
-        logger.info("Project section '{}' entered in search", sectionName);
+    public ProjectsPage searchProject(ProjectNames project) {
+        String projectName = project.getName();
+        logger.info("Searching for project section: {}", projectName);
+        searchInput.setValue(projectName);
+        searchInput.shouldHave(value(projectName));
+        logger.info("Project section '{}' entered in search", projectName);
         return this;
     }
 
-    public ProjectsPage selectProject(String sectionName) {
-        logger.info("Selecting project section: {}", sectionName);
-        $("a[title='" + sectionName + "']")
+    public ProjectsPage selectProject(ProjectNames project) {
+        String projectName = project.getName();
+        logger.info("Selecting project section: {}", projectName);
+        $("a[title='" + projectName + "']")
                 .click();
-        logger.info("Project section '{}' selected", sectionName);
+        logger.info("Project section '{}' selected", projectName);
         return this;
     }
 
@@ -78,6 +82,16 @@ public class ProjectsPage {
         openUserCornerMenu();
         signOutButton.shouldHave(text("Sign Out")).click();
         logger.info("Sign out completed");
+        return this;
+    }
+
+    public ProjectsPage verifyProjectBadges(String expectedBadgeName) {
+        logger.info("Verifying project badges contain text: {}", expectedBadgeName);
+        ElementsCollection projectBadges = $$("ul li .common-badge");
+        projectBadges.shouldHave(sizeGreaterThan(1));
+        projectBadges.filterBy(text(expectedBadgeName))
+                .shouldHave(sizeGreaterThan(0));
+        logger.info("Project badge with text '{}' found", expectedBadgeName);
         return this;
     }
 }

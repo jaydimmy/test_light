@@ -12,6 +12,7 @@ import static com.codeborne.selenide.Selenide.switchTo;
 import static io.testomat.test_light.web.pages.BasePage.MAIN_APP;
 import static io.testomat.test_light.web.pages.BasePage.verifyLoaderIsNotVisible;
 import static io.testomat.test_light.web.pages.BasePage.verifyPageIsLoaded;
+import static io.testomat.test_light.web.pages.enums.PageTitles.README;
 import static org.openqa.selenium.Keys.END;
 
 public class ReadmePage {
@@ -23,7 +24,7 @@ public class ReadmePage {
     public ReadmePage isLoaded() {
         logger.info("Verifying Readme page is loaded");
         verifyLoaderIsNotVisible();
-        verifyPageIsLoaded(MAIN_APP, "Readme");
+        verifyPageIsLoaded(MAIN_APP, README);
         logger.info("Readme page loaded");
         return this;
     }
