@@ -1,12 +1,15 @@
 package io.testomat.test_light;
 
+import com.codeborne.selenide.junit5.TextReportExtension;
 import io.testomat.test_light.helpers.EnvHelper;
 import io.testomat.test_light.web.pages.SignInPage;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import static com.codeborne.selenide.Selenide.closeWebDriver;
 
+@ExtendWith({TextReportExtension.class})
 public class BaseTest {
 
     static {
@@ -18,7 +21,8 @@ public class BaseTest {
 
     @BeforeEach
     public void setUp() {
-        new SignInPage().login(userEmail, userPassword);
+        new SignInPage()
+                .login(userEmail, userPassword);
  }
 
     @AfterEach
