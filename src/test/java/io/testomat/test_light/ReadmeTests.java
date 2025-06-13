@@ -5,8 +5,8 @@ import io.testomat.test_light.web.pages.ProjectsPage;
 import io.testomat.test_light.web.pages.ReadmePage;
 import org.junit.jupiter.api.Test;
 
-import static io.testomat.test_light.web.pages.ProjectsPage.MANUFACTURE_TESTOMATIO;
-import static io.testomat.test_light.web.pages.ProjectsPage.QA_CLUB_LVIV;
+import static io.testomat.test_light.web.pages.enums.CompanyNames.QA_CLUB_LVIV;
+import static io.testomat.test_light.web.pages.enums.ProjectNames.MANUFACTURE_TESTOMATIO;
 
 public class ReadmeTests extends BaseTest {
 

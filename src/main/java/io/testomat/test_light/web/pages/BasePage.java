@@ -1,6 +1,8 @@
 package io.testomat.test_light.web.pages;
 
 import com.codeborne.selenide.SelenideElement;
+import io.testomat.test_light.web.pages.enums.PageTitles;
+import io.testomat.test_light.web.pages.enums.ProjectNames;
 import org.openqa.selenium.By;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -26,6 +28,14 @@ public abstract class BasePage {
                 .find("h2")
                 .shouldHave(text(pageName));
         logger.info("Page '{}' is loaded", pageName);
+    }
+
+    public static void verifyPageIsLoaded(String parentElementID, PageTitles pageTitle) {
+        verifyPageIsLoaded(parentElementID, pageTitle.getTitle());
+    }
+
+    public static void verifyPageIsLoaded(String parentElementID, ProjectNames projectName) {
+        verifyPageIsLoaded(parentElementID, projectName.getName());
     }
 
     public static void verifyMessage(SelenideElement element, String expectedMessage) {
