@@ -1,4 +1,4 @@
-package io.testomat.test_light.web.pages.enums;
+package io.testomat.test_light.enums;
 
 public enum PageTitles {
     SIGN_IN("Sign In"),

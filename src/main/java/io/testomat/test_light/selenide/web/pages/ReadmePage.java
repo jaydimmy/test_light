@@ -1,4 +1,4 @@
-package io.testomat.test_light.web.pages;
+package io.testomat.test_light.selenide.web.pages;
 
 import com.codeborne.selenide.Selectors;
 import com.codeborne.selenide.SelenideElement;
@@ -9,10 +9,10 @@ import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.actions;
 import static com.codeborne.selenide.Selenide.switchTo;
-import static io.testomat.test_light.web.pages.BasePage.MAIN_APP;
-import static io.testomat.test_light.web.pages.BasePage.verifyLoaderIsNotVisible;
-import static io.testomat.test_light.web.pages.BasePage.verifyPageIsLoaded;
-import static io.testomat.test_light.web.pages.enums.PageTitles.README;
+import static io.testomat.test_light.enums.PageTitles.README;
+import static io.testomat.test_light.selenide.web.pages.BasePage.MAIN_APP;
+import static io.testomat.test_light.selenide.web.pages.BasePage.verifyLoaderIsNotVisible;
+import static io.testomat.test_light.selenide.web.pages.BasePage.verifyPageIsLoaded;
 import static org.openqa.selenium.Keys.END;
 
 public class ReadmePage {

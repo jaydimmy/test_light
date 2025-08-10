@@ -1,9 +1,9 @@
-package io.testomat.test_light.web.pages;
+package io.testomat.test_light.selenide.web.pages;
 
 import com.codeborne.selenide.ElementsCollection;
 import com.codeborne.selenide.SelenideElement;
-import io.testomat.test_light.web.pages.enums.CompanyNames;
-import io.testomat.test_light.web.pages.enums.ProjectNames;
+import io.testomat.test_light.enums.CompanyNames;
+import io.testomat.test_light.enums.ProjectNames;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -14,10 +14,10 @@ import static com.codeborne.selenide.Condition.value;
 import static com.codeborne.selenide.Condition.visible;
 import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.$$;
-import static io.testomat.test_light.web.pages.BasePage.CONTENT_DESKTOP;
-import static io.testomat.test_light.web.pages.BasePage.verifyLoaderIsNotVisible;
-import static io.testomat.test_light.web.pages.BasePage.verifyPageIsLoaded;
-import static io.testomat.test_light.web.pages.enums.PageTitles.PROJECTS;
+import static io.testomat.test_light.enums.PageTitles.PROJECTS;
+import static io.testomat.test_light.selenide.web.pages.BasePage.CONTENT_DESKTOP;
+import static io.testomat.test_light.selenide.web.pages.BasePage.verifyLoaderIsNotVisible;
+import static io.testomat.test_light.selenide.web.pages.BasePage.verifyPageIsLoaded;
 
 public class ProjectsPage {
     private static final Logger logger = LoggerFactory.getLogger(ProjectsPage.class);
