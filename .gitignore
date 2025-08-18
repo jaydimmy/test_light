@@ -37,3 +37,4 @@ bin/
 
 ### DotEnv ###
 .env
+/test-results/

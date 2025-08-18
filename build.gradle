@@ -11,6 +11,8 @@ repositories {
 
 ext {
     selenideVersion = '7.9.3'
+    seleniumVersion = '4.34.0'
+    playwrightVersion = '1.54.0'
     slf4jVersion = '2.0.12'
     logbackVersion = '1.5.18'
     junitVersion = '5.11.3'
@@ -28,8 +30,9 @@ tasks.withType(JavaCompile).configureEach {
 }
 
 dependencies {
-
     implementation "com.codeborne:selenide:${selenideVersion}"
+    implementation "org.seleniumhq.selenium:selenium-java:${seleniumVersion}"
+    implementation "com.microsoft.playwright:playwright:${playwrightVersion}"
 
     implementation "org.slf4j:slf4j-api:${slf4jVersion}"
     runtimeOnly "ch.qos.logback:logback-classic:${logbackVersion}"
@@ -39,7 +42,6 @@ dependencies {
 
     implementation "io.github.cdimascio:java-dotenv:${dotEnvVersion}"
 }
-
 
 test {
     useJUnitPlatform()

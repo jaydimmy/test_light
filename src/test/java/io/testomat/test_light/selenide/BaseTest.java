@@ -8,6 +8,7 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.extension.ExtendWith;
 
 import static com.codeborne.selenide.Selenide.closeWebDriver;
+import static io.testomat.test_light.helpers.EnvHelper.getEnvValue;
 
 @ExtendWith({TextReportExtension.class})
 public class BaseTest {
@@ -16,8 +17,8 @@ public class BaseTest {
         EnvHelper.configure();
     }
 
-    public static final String validEmail = EnvHelper.getUserEmail();
-    public static final String validPassword = EnvHelper.getUserPassword();
+    public static final String validEmail = getEnvValue("USER_EMAIL");
+    public static final String validPassword = getEnvValue("USER_PASSWORD");
 
     @BeforeEach
     public void setUp() {
