@@ -1,6 +1,7 @@
 package io.testomat.test_light.web.pages;
 
 import com.codeborne.selenide.Selectors;
+import io.testomat.test_light.web.pages.enums.ProjectNames;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -12,11 +13,11 @@ import static io.testomat.test_light.web.pages.BasePage.verifyPageIsLoaded;
 public class ProjectPage {
     private static final Logger logger = LoggerFactory.getLogger(ProjectPage.class);
 
-    public ProjectPage isLoaded(String targetProjectName) {
-        logger.info("Verifying Project page is loaded for project: {}", targetProjectName);
+    public ProjectPage isLoaded(ProjectNames projectName) {
+        logger.info("Verifying Project page is loaded for project: {}", projectName);
         verifyLoaderIsNotVisible();
-        verifyPageIsLoaded(MAIN_APP, targetProjectName);
-        logger.info("Project page loaded for project: {}", targetProjectName);
+        verifyPageIsLoaded(MAIN_APP, projectName);
+        logger.info("Project page loaded for project: {}", projectName);
         return this;
     }
 
