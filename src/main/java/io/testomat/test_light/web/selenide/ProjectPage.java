@@ -1,0 +1,37 @@
+package io.testomat.test_light.web.selenide;
+
+import com.codeborne.selenide.Selectors;
+import io.testomat.test_light.resurses.enums.ProjectNames;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
+import static com.codeborne.selenide.Selenide.$;
+import static io.testomat.test_light.web.selenide.BasePage.MAIN_APP;
+import static io.testomat.test_light.web.selenide.BasePage.verifyLoaderIsNotVisible;
+import static io.testomat.test_light.web.selenide.BasePage.verifyPageIsLoaded;
+
+public class ProjectPage {
+    private static final Logger logger = LoggerFactory.getLogger(ProjectPage.class);
+
+    public ProjectPage isLoaded(ProjectNames projectName) {
+        logger.info("Verifying Project page is loaded for project: {}", projectName);
+        verifyLoaderIsNotVisible();
+        verifyPageIsLoaded(MAIN_APP, projectName);
+        logger.info("Project page loaded for project: {}", projectName);
+        return this;
+    }
+
+    public ProjectPage openReadme() {
+        logger.info("Opening Readme tab");
+        $(Selectors.byLinkText("Readme")).click();
+        logger.info("Readme tab opened");
+        return this;
+    }
+
+    public ProjectPage clickOnEditButton() {
+        logger.info("Clicking on 'Edit' button");
+        $(Selectors.byText("Edit")).click();
+        logger.info("'Edit' button clicked");
+        return this;
+    }
+}
