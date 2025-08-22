@@ -1,14 +1,14 @@
-package io.testomat.test_light.web.pages;
+package io.testomat.test_light.selenide.web.pages;
 
 import com.codeborne.selenide.Selectors;
-import io.testomat.test_light.web.pages.enums.ProjectNames;
+import io.testomat.test_light.enums.ProjectNames;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import static com.codeborne.selenide.Selenide.$;
-import static io.testomat.test_light.web.pages.BasePage.MAIN_APP;
-import static io.testomat.test_light.web.pages.BasePage.verifyLoaderIsNotVisible;
-import static io.testomat.test_light.web.pages.BasePage.verifyPageIsLoaded;
+import static io.testomat.test_light.selenide.web.pages.BasePage.MAIN_APP;
+import static io.testomat.test_light.selenide.web.pages.BasePage.verifyLoaderIsNotVisible;
+import static io.testomat.test_light.selenide.web.pages.BasePage.verifyPageIsLoaded;
 
 public class ProjectPage {
     private static final Logger logger = LoggerFactory.getLogger(ProjectPage.class);

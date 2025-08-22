@@ -1,7 +1,7 @@
-package io.testomat.test_light.web.pages.enums;
+package io.testomat.test_light.enums;
 
 public enum ProjectNames {
-    MANUFACTURE_LIGHT("Manufacture Light"),
+    MANUFACTURE_LIGHT("manufacture light"),
     MANUFACTURE_TESTOMATIO("Manufacture Testomatio");
 
     public final String name;

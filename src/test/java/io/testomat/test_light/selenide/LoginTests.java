@@ -1,12 +1,12 @@
-package io.testomat.test_light;
+package io.testomat.test_light.selenide;
 
 import io.testomat.test_light.helpers.EnvHelper;
-import io.testomat.test_light.web.pages.ProjectsPage;
-import io.testomat.test_light.web.pages.SignInPage;
+import io.testomat.test_light.selenide.web.pages.ProjectsPage;
+import io.testomat.test_light.selenide.web.pages.SignInPage;
 import org.junit.jupiter.api.Test;
 
-import static io.testomat.test_light.BaseTest.validEmail;
-import static io.testomat.test_light.BaseTest.validPassword;
+import static io.testomat.test_light.selenide.BaseTest.validEmail;
+import static io.testomat.test_light.selenide.BaseTest.validPassword;
 
 public class LoginTests {
 

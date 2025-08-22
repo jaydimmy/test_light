@@ -1,8 +1,8 @@
-package io.testomat.test_light;
+package io.testomat.test_light.selenide;
 
 import com.codeborne.selenide.junit5.TextReportExtension;
 import io.testomat.test_light.helpers.EnvHelper;
-import io.testomat.test_light.web.pages.SignInPage;
+import io.testomat.test_light.selenide.web.pages.SignInPage;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.extension.ExtendWith;

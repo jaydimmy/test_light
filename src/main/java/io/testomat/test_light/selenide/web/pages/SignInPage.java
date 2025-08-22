@@ -1,4 +1,4 @@
-package io.testomat.test_light.web.pages;
+package io.testomat.test_light.selenide.web.pages;
 
 import com.codeborne.selenide.Selenide;
 import com.codeborne.selenide.SelenideElement;
@@ -9,7 +9,7 @@ import org.slf4j.LoggerFactory;
 import static com.codeborne.selenide.Condition.checked;
 import static com.codeborne.selenide.Condition.value;
 import static com.codeborne.selenide.Selenide.$;
-import static io.testomat.test_light.web.pages.enums.PageTitles.SIGN_IN;
+import static io.testomat.test_light.enums.PageTitles.SIGN_IN;
 
 
 public class SignInPage extends BasePage {

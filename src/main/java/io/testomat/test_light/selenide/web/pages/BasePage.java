@@ -1,8 +1,8 @@
-package io.testomat.test_light.web.pages;
+package io.testomat.test_light.selenide.web.pages;
 
 import com.codeborne.selenide.SelenideElement;
-import io.testomat.test_light.web.pages.enums.PageTitles;
-import io.testomat.test_light.web.pages.enums.ProjectNames;
+import io.testomat.test_light.enums.PageTitles;
+import io.testomat.test_light.enums.ProjectNames;
 import org.openqa.selenium.By;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
